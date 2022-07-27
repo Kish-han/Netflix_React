@@ -1,0 +1,47 @@
+.nav{
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    height: 25px;
+    z-index: 100;
+
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+.nav__black{
+    background-color: #111;
+}
+
+.nav__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.nav__logo__container{
+    position: fixed;
+    left: 0;
+    width: 100px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.nav__logo{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.nav__avatar__container{
+    position: fixed;
+    right: 20px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav__avatar{
+    object-fit: cover;
+    width: 100%;
+}
