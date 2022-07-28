@@ -11,6 +11,7 @@
 }
 .nav__black{
     background-color: #111;
+    opacity: 0.9;
 }
 
 .nav__content{

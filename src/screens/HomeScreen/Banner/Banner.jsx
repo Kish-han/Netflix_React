@@ -30,7 +30,7 @@ const Banner = () => {
         <section className='banner' style={{
             backgroundSize: "cover",
             backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie.backdrop_path}')`,
-            backgroundPosition: "center center"
+            backgroundPosition: "center"
         }}>
             <div className="banner__contents">
                 <h1 className='banner__title'>{movie?.title || movie?.name}</h1>
@@ -43,7 +43,6 @@ const Banner = () => {
                 </h1>
             </div>
             <div className="banner__fadeBottom">
-
             </div>
         </section>
     )
