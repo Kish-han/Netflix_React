@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Banner.css"
+import axios from '../../../axios';
+import requests from "../../../Request"
 
 const Banner = () => {
+
+    const [movie, setMovie] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const request = await axios.get(requests.fetchTrending);
+            setMovie(
+                request.data.results[
+                Math.floor(Math.random() * request.data.results.length - 1)
+                ]
+            );
+            return request
+        }
+        fetchData()
+    }, []);
+    console.log(movie)
 
     const truncate = (string, n) => {
         return string?.length > n ?
@@ -11,17 +29,17 @@ const Banner = () => {
     return (
         <section className='banner' style={{
             backgroundSize: "cover",
-            backgroundImage: `url('https://i.etsystatic.com/13246776/r/il/fd37a9/1948443874/il_570xN.1948443874_7yfo.jpghttps://i.etsystatic.com/13246776/r/il/fd37a9/1948443874/il_570xN.1948443874_7yfo.jpg')`,
+            backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie.backdrop_path}')`,
             backgroundPosition: "center center"
         }}>
             <div className="banner__contents">
-                <h1 className='banner__title'>Movie</h1>
+                <h1 className='banner__title'>{movie?.title || movie?.name}</h1>
                 <div className="banner__buttons">
                     <button className='banner__button' >Play</button>
                     <button className='banner__button' >My List</button>
                 </div>
                 <h1 className="banner__description">
-                    {truncate('This is ', 150)}
+                    {truncate(`${movie.overview}`, 150)}
                 </h1>
             </div>
             <div className="banner__fadeBottom">
