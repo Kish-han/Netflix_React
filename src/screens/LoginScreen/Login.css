@@ -1,0 +1,127 @@
+.loginScreen{
+    position: relative;
+}
+
+.loginScreen__background{
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/c2578c37-8569-4f88-b8f1-67a26a9ddcdd/4f46d201-48d4-40a7-9bfb-8e260d680912/IN-en-20220725-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.login__nav{
+    padding-top: 20px;
+    position: fixed;
+}
+
+.loginscreen__logo{
+    /* position: fixed; */
+    /* left: 0; */
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
+    /* padding-top: 20px; */
+}
+
+.loginScreen__button{
+    position: fixed;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    border-radius: 3  px;
+}
+
+.loginScreen__gradient{
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8)100%
+    );
+}
+
+.loginscreen__body{
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1;
+}
+
+.loginscreen__body > h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.loginscreen__body > h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.loginscreen__body > h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.loginscreen__input{
+    margin: 20px;
+}
+.loginscreen__input > form > input{
+    padding: 10px;
+    outline: none;
+    height: 30px;
+    width: 40%;
+    border: none;
+    max-width: 600px;
+}
+
+.loginscreen__getstarted{
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    .loginscreen_body > h1{
+        font-size: 40px;
+    }
+
+    .loginscreen_body > h2{
+        font-size: 1.5rem;
+    }
+
+    .loginscreen_body > h3{
+        font-size: 1em;
+    }
+
+    .loginscreen__getstarted{
+        font-size: 12px;
+        padding: 12px 6px 12px 6px;
+        font-weight: 300;
+    }
+
+    .loginscreen__input > form > input{
+        width: 50%;
+        height: 18%;
+    }
+}

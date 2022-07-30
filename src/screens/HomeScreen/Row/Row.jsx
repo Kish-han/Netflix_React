@@ -21,12 +21,15 @@ const Row = ({ title, fetch, isLargeRow = false }) => {
                 <h2>{title}</h2>
                 <div className="row__posters">
                     {movies.map(movie => (
-                        <div className='movie__title'><img
-                            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                            key={movie.id}
-                            src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
-                            {!isLargeRow && <p>{movie?.title || movie?.name}</p>}
-                        </div>
+                        ((isLargeRow && movie.poster_path) ||
+                        (!isLargeRow && movie.backdrop_path)) && (
+                            <div className='movie__title'><img
+                                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                                key={movie.id}
+                                src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
+                                {!isLargeRow && <p>{movie?.title || movie?.name}</p>}
+                            </div>
+                        )
                     ))}
                 </div>
             </div>
