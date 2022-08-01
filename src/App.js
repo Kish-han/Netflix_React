@@ -43,8 +43,8 @@ function App() {
           <Login />
         ) : (    
           <Routes>
-            <Route path="/profile" element={<Profile/>} />
             <Route path="/" element={<HomeScreen />} />
+            <Route path="/profile" element={<Profile/>} />
           </Routes>
         )}
       </BrowserRouter>
