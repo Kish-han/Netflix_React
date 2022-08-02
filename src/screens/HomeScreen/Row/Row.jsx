@@ -3,14 +3,12 @@ import "./Row.css"
 import axios from "../../../axios"
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
-import { useNavigate } from 'react-router-dom';
 
 const Row = ({ title, fetch, isLargeRow = false }) => {
 
     const [movies, setMovies] = useState([]);
     const [trailerUrl, setTrailerUrl] = useState("")
-    const navigate = useNavigate();
-
+    
 
     useEffect(() => {
         const fetchData = async () => {
